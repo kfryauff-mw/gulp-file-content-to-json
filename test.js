@@ -1,7 +1,9 @@
 'use strict';
 
 var fs = require('fs');
+var gulp = require('gulp');
 var gutil = require('gulp-util');
+var path = require('path');
 var should = require('should');
 var toJson = require('./index');
 
@@ -61,12 +63,15 @@ describe('It should store data', function() {
 
   it('should create output.json', function(done) {
     var stream = toJson();
+    var streamPath = path.join(__dirname, '/index.html');
     var streamFile = new gutil.File({
       cwd: __dirname,
       base: __dirname,
-      path: __dirname + '/index.html',
-      contents: fs.readFileSync(__dirname + '/index.html'),
+      path: streamPath,
+      contents: fs.readFileSync(streamPath),
     });
+
+    console.log(streamFile);
 
     // stream.on('error', function(err) {
     //   err.message.should.equal('Streaming not supported');
@@ -74,11 +79,13 @@ describe('It should store data', function() {
     // });
 
     stream.on('data', function(data) {
-      console.log('data from test: ', data);
-      should.exist('./output.json');
+      // console.log('data from test: ', data);
+      // should.exist('./output.json');
     });
 
     stream.write(streamFile);
+
+    stream.end();
   });
 
   // it('Store sample data', function(cb) {

@@ -23,12 +23,14 @@
     "json"
   ],
   "dependencies": {
-    "gulp-util": "~3.0.0",
+    "gulp-util": "^3.0.7",
     "through2": "^0.6.0"
   },
   "devDependencies": {
     "fs": "0.0.2",
+    "gulp": "^3.9.1",
     "mocha": "^1.19.0",
+    "path": "^0.12.7",
     "should": "^3.3.2"
   },
   "readmeFilename": "readme.md"

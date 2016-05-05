@@ -16,7 +16,7 @@ module.exports = function(options) {
 
   return through.obj(function(file, enc, cb) {
 
-    console.log('file: ', String(file[2]));
+    // console.log('file: ', String(file[2]));
 
     if (file.isStream()) {
       this.emit('error', new gutil.PluginError('gulp-file-content-to-json', 'Streaming not supported'));
@@ -28,13 +28,13 @@ module.exports = function(options) {
       path = file.relative;
     }
 
-    console.log('path_original: ', path);
+    // console.log('pat h_original: ', path);
 
     if (options.strip) {
       path = path.replace(options.strip, '');
     }
 
-    console.log('replaced path: ', path);
+    // console.log(' replaced path: ', path);
     var fileContents = fs.readFileSync(path, 'utf8');
 
     if (options.trim) {
@@ -42,14 +42,13 @@ module.exports = function(options) {
     }
 
     files[path] = fileContents;
-    console.log('files: ', files);
+    // console.log('files: ', files);
 
     this.push(file);
 
-    console.log('attempting to write to file: ', options.filename);
-    console.log('files in output attempt: ', JSON.stringify(files));
+    // console.log('attempting to write to file: ', options.filename);
+    // console.log('files in output attempt: ', JSON.stringify(files));
 
-    // fs.writeFile(options.filename, JSON.stringify(files), cb);
     fs.writeFile(options.filename, JSON.stringify(files, null, 2), cb);
 
     return cb();

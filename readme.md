@@ -1,6 +1,7 @@
 
 
-Create json file mapping sources to their content. Modified from https://github.com/danielhusar
+Create json file mapping sources to their content.
+Modified from https://github.com/danielhusar
 
 
 ## Install
@@ -13,10 +14,10 @@ npm install --save-dev gulp-file-content-to-json
 
 ```js
 var gulp = require('gulp');
-var toJson = require('gulp-to-json');
+var toJson = require('gulp-file-content-to-json');
 
 gulp.task('tojson', function () {
-  gulp.src('./public/*.html')
+  gulp.src('./public/*.scss')
   .pipe(toJson());
 });
 ```
@@ -28,12 +29,13 @@ var toJson = require('gulp-to-json');
 gulp.task('tojson', function () {
   gulp.src('./public/*.html')
   .pipe(toJson({
-    strip: /^.+\/?\\?public\/?\\?/ //create just file names by removing everything from left of public/ folder
+    strip: /^.+\/?\\?public\/?\\?/, //create just file names by removing everything from left of public/ folder
+    filename: 'path/to/output.json' //default creates output.json in root directory
   }));
 });
 ```
 
-This will create output.json file in which will be all the html files from public folder.
+This will create output.json file in which the (key, value) pair corresponds to the input filename and the input file contents, respectively.
 
 ## Options
 
