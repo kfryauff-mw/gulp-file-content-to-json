@@ -1,13 +1,13 @@
 {
-  "name": "gulp-to-json",
+  "name": "gulp-file-content-to-json",
   "version": "1.0.1",
-  "description": "Create json file from sources.",
+  "description": "Create json file mapping sources to their content. Modified from https://github.com/danielhusar",
   "license": "MIT",
-  "repository": "danielhusar/gulp-to-json",
+  "repository": "kfryauff-mw/gulp-file-content-to-json",
   "author": {
-    "name": "Daniel Husar",
-    "email": "dano.husar@gmail.com",
-    "url": "https://github.com/danielhusar"
+    "name": "K. Fryauff",
+    "email": "krista.fryauff@moovweb.com",
+    "url": "https://github.com/kfryauff-mw"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -27,6 +27,7 @@
     "through2": "^0.6.0"
   },
   "devDependencies": {
+    "fs": "0.0.2",
     "mocha": "^1.19.0",
     "should": "^3.3.2"
   },

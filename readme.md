@@ -1,12 +1,12 @@
-# [gulp](http://gulpjs.com)-to-json [![Build Status](https://secure.travis-ci.org/danielhusar/gulp-to-json.svg?branch=master)](http://travis-ci.org/danielhusar/gulp-to-json)
 
-Create json file from source files passed to
+
+Create json file mapping sources to their content. Modified from https://github.com/danielhusar
 
 
 ## Install
 
 ```sh
-npm install --save-dev gulp-to-json
+npm install --save-dev gulp-file-content-to-json
 ```
 
 ## Example
@@ -28,7 +28,7 @@ var toJson = require('gulp-to-json');
 gulp.task('tojson', function () {
   gulp.src('./public/*.html')
   .pipe(toJson({
-    strip: /^.+\/?\\?public\/?\\?/ //create just file names by removing everything from left of public/ folder 
+    strip: /^.+\/?\\?public\/?\\?/ //create just file names by removing everything from left of public/ folder
   }));
 });
 ```
@@ -60,4 +60,4 @@ Pattern to strip from the files urls.
 
 ## License
 
-MIT © [Daniel Husar](https://github.com/danielhusar)
+MIT © [Krista Fryauff](https://github.com/kfryauff-mw)
