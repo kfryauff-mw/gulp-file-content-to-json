@@ -1,6 +1,6 @@
 {
   "name": "gulp-file-content-to-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create json file mapping sources to their content. Modified from https://github.com/danielhusar",
   "license": "MIT",
   "repository": "kfryauff-mw/gulp-file-content-to-json",
